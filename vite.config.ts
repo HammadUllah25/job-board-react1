@@ -9,7 +9,7 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  base: "/job-board/",
+  base: "/job-board-react1/",
   plugins: [react(), mode === "development" && componentTagger()].filter(
     Boolean
   ),

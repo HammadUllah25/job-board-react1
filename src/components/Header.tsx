@@ -1,11 +1,7 @@
 import { Link, useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu, LogOut } from "lucide-react";
-import {
-  Sheet,
-  SheetContent,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useAuth } from "./AuthProvider";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/components/ui/use-toast";
@@ -88,14 +84,29 @@ const Header = () => {
               JobBoard
             </Link>
             <nav className="hidden md:flex items-center gap-6">
-              <Link to="/jobs" className="text-sm hover:text-primary transition-colors">
+              <Link
+                to="/jobs"
+                className="text-sm hover:text-primary transition-colors"
+              >
                 Find Jobs
               </Link>
-              <Link to="/companies" className="text-sm hover:text-primary transition-colors">
+              <Link
+                to="/companies"
+                className="text-sm hover:text-primary transition-colors"
+              >
                 Companies
               </Link>
-              <Link to="/salary" className="text-sm hover:text-primary transition-colors">
+              <Link
+                to="/salary"
+                className="text-sm hover:text-primary transition-colors"
+              >
                 Salary Guide
+              </Link>
+              <Link
+                to="/job-list-test"
+                className="text-sm hover:text-primary transition-colors"
+              >
+                Bulk Upload
               </Link>
             </nav>
           </div>
@@ -108,14 +119,16 @@ const Header = () => {
                 </Link>
                 <DropdownMenu>
                   <DropdownMenuTrigger asChild>
-                    <Button 
-                      variant="ghost" 
-                      size="icon" 
+                    <Button
+                      variant="ghost"
+                      size="icon"
                       className="relative h-8 w-8 rounded-full"
                       disabled={loading}
                     >
                       <Avatar className="h-8 w-8">
-                        <AvatarFallback>{loading ? "..." : getInitials(fullName)}</AvatarFallback>
+                        <AvatarFallback>
+                          {loading ? "..." : getInitials(fullName)}
+                        </AvatarFallback>
                       </Avatar>
                     </Button>
                   </DropdownMenuTrigger>
@@ -151,14 +164,29 @@ const Header = () => {
             </SheetTrigger>
             <SheetContent>
               <nav className="flex flex-col gap-4 mt-8">
-                <Link to="/jobs" className="text-sm hover:text-primary transition-colors">
+                <Link
+                  to="/jobs"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   Find Jobs
                 </Link>
-                <Link to="/companies" className="text-sm hover:text-primary transition-colors">
+                <Link
+                  to="/companies"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   Companies
                 </Link>
-                <Link to="/salary" className="text-sm hover:text-primary transition-colors">
+                <Link
+                  to="/salary"
+                  className="text-sm hover:text-primary transition-colors"
+                >
                   Salary Guide
+                </Link>
+                <Link
+                  to="/job-list-test"
+                  className="text-sm hover:text-primary transition-colors"
+                >
+                  Bulk Upload
                 </Link>
                 {user ? (
                   <>
@@ -166,7 +194,9 @@ const Header = () => {
                       <Button className="w-full">Post a Job</Button>
                     </Link>
                     <Link to="/profile">
-                      <Button variant="outline" className="w-full">Profile</Button>
+                      <Button variant="outline" className="w-full">
+                        Profile
+                      </Button>
                     </Link>
                     <Button
                       variant="ghost"
@@ -183,7 +213,9 @@ const Header = () => {
                       <Button className="w-full mb-2">Sign in</Button>
                     </Link>
                     <Link to="/auth?view=sign_up">
-                      <Button className="w-full" variant="outline">Sign up</Button>
+                      <Button className="w-full" variant="outline">
+                        Sign up
+                      </Button>
                     </Link>
                   </>
                 )}

@@ -11,6 +11,9 @@ import JobDetail from "./pages/JobDetail";
 import PostJob from "./pages/PostJob";
 import Auth from "./pages/Auth";
 import Profile from "./pages/Profile";
+import Companies from "./pages/Companies";
+import JobList from "./components/JobList";
+import { mockJobs } from "./data/mockJobs";
 
 const queryClient = new QueryClient();
 
@@ -27,8 +30,13 @@ const App = () => (
               <Route path="/" element={<HomePage />} />
               <Route path="/jobs" element={<JobListings />} />
               <Route path="/jobs/:id" element={<JobDetail />} />
+              <Route
+                path="/job-list-test"
+                element={<JobList jobs={mockJobs} />}
+              />
               <Route path="/post-job" element={<PostJob />} />
               <Route path="/profile" element={<Profile />} />
+              <Route path="/companies" element={<Companies />} />
             </Route>
           </Routes>
         </HashRouter>

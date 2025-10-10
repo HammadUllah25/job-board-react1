@@ -3,12 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { useAuth } from "@/components/AuthProvider";
 import { supabase } from "@/integrations/supabase/client";
 import { useToast } from "@/hooks/use-toast";
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import {
@@ -21,7 +16,7 @@ import {
 import type { Database } from "@/integrations/supabase/types";
 
 // Use the generated types from our database schema
-type Profile = Database['public']['Tables']['profiles']['Row'];
+type Profile = Database["public"]["Tables"]["profiles"]["Row"];
 
 const Profile = () => {
   const { user } = useAuth();
@@ -60,12 +55,13 @@ const Profile = () => {
         }
 
         if (data) {
-          setProfile({
+          setProfile((prev) => ({
+            ...prev,
             username: data.username,
             full_name: data.full_name,
             gender: data.gender,
             date_of_birth: data.date_of_birth,
-          });
+          }));
         }
       } catch (error) {
         console.error("Error fetching profile:", error);
@@ -137,7 +133,10 @@ const Profile = () => {
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
-              <label htmlFor="username" className="block text-sm font-medium mb-1">
+              <label
+                htmlFor="username"
+                className="block text-sm font-medium mb-1"
+              >
                 Username
               </label>
               <Input
@@ -150,7 +149,10 @@ const Profile = () => {
               />
             </div>
             <div>
-              <label htmlFor="full_name" className="block text-sm font-medium mb-1">
+              <label
+                htmlFor="full_name"
+                className="block text-sm font-medium mb-1"
+              >
                 Full Name
               </label>
               <Input
@@ -163,7 +165,10 @@ const Profile = () => {
               />
             </div>
             <div>
-              <label htmlFor="gender" className="block text-sm font-medium mb-1">
+              <label
+                htmlFor="gender"
+                className="block text-sm font-medium mb-1"
+              >
                 Gender
               </label>
               <Select
@@ -184,7 +189,10 @@ const Profile = () => {
               </Select>
             </div>
             <div>
-              <label htmlFor="date_of_birth" className="block text-sm font-medium mb-1">
+              <label
+                htmlFor="date_of_birth"
+                className="block text-sm font-medium mb-1"
+              >
                 Date of Birth
               </label>
               <Input

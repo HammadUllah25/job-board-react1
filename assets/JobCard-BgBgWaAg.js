@@ -1,0 +1,6 @@
+import{f as n,r as t,j as e,C as i,a as o,b as c,c as d,g as l,B as m,d as x}from"./index-DtKL-miT.js";/**
+ * @license lucide-react v0.462.0 - ISC
+ *
+ * This source code is licensed under the ISC license.
+ * See the LICENSE file in the root directory of this source tree.
+ */const h=n("Bookmark",[["path",{d:"m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z",key:"1fy3hk"}]]),C=()=>{},u=s=>{let a=0;for(let r=0;r<1e6;r++)a+=Math.sqrt(r);return`${s}-computed-${a.toFixed(2)}`},f=({job:s,onSave:a})=>(t.useRef(performance.now()),t.useMemo(()=>u(s.id),[s.id]),t.useEffect(()=>{}),e.jsxs(i,{className:"transition-all hover:shadow-md",children:[e.jsx(o,{children:e.jsxs("div",{className:"flex justify-between items-start",children:[e.jsxs("div",{className:"flex-1",children:[e.jsx(c,{className:"text-lg",children:s.title}),e.jsxs(d,{className:"flex items-center gap-2 mt-1",children:[e.jsx(l,{className:"h-4 w-4"}),s.company]})]}),e.jsx(m,{variant:"ghost",size:"icon",onClick:()=>a(s.id),"aria-label":"Save job",children:e.jsx(h,{className:"h-4 w-4"})})]})}),e.jsxs(x,{children:[e.jsxs("p",{className:"text-sm text-muted-foreground",children:["Job ID: ",s.id]}),!1]})]})),j=t.memo(f);export{j as default,C as resetJobCardInstrumentation};
